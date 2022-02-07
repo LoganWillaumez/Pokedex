@@ -1,0 +1,25 @@
+<%- include("./partials/header.ejs") %>
+<div class="container">
+  <div class="pokedex pokedex-bookmarks">
+    <% bookmarks.forEach(pokemon => { %>
+    <article class="pokemon">
+      <h2 class="pokemon__name"><%=pokemon.name%></h2>
+      <img
+        class="pokemon__img"
+        src="/images/pokemons/<%=pokemon.id%>.png"
+        alt=""
+      />
+
+      <p class="pokemon__id">No.<%=pokemon.id%></p>
+      <a
+        title="Delete to bookmark"
+        class="bookmarks__add"
+        href="/bookmarks/delete/<%=pokemon.id%>"
+        ><i class="fas fa-minus-circle"></i
+      ></a>
+    </article>
+    <%})%>
+  </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>

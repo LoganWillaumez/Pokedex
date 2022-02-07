@@ -1,0 +1,51 @@
+<%- include("./partials/header.ejs") %>
+<div class="container">
+  <div class="pokedex">
+    <% pokemons.forEach(pokemon => { %>
+    <article class="pokemon">
+      <h2 class="pokemon__name"><%=pokemon.name%></h2>
+      <img
+        class="pokemon__img"
+        src="/images/pokemons/<%=pokemon.id%>.png"
+        alt=""
+      />
+
+      <p class="pokemon__id">No.<%=pokemon.id%></p>
+      <a
+        title="Add to bookmark"
+        class="bookmarks__add"
+        href="/bookmarks/add/<%=pokemon.id%>"
+        ><i class="fas fa-plus-circle"></i
+      ></a>
+    </article>
+    <%})%>
+  </div>
+  <form action="/" class="filter" method="GET">
+    <h3 class="filter__title">Filter by :</h3>
+    <div class="filter__container">
+      <h4 class="filter__container-title">Types</h4>
+      <div class="input__container">
+        <% types.forEach(type => { %>
+
+        <input
+          id="checkbox-<%=type.types.toLowerCase()%>"
+          class="filter__checkbox"
+          type="checkbox"
+          name="type"
+          value="<%=type.types.toLowerCase()%>"
+          aria-label="<%=type.types.toLowerCase()%> type"
+        />
+        <label
+          class="type type-<%=type.types.toLowerCase()%>"
+          for="checkbox-<%=type.types.toLowerCase()%>"
+        >
+          <%=type.types.toLowerCase() %></label
+        >
+        <% }) %>
+      </div>
+    </div>
+    <button class="filter__btn" type="submit">Filter</button>
+  </form>
+</div>
+
+<%- include("./partials/footer.ejs") %>
