@@ -21,7 +21,6 @@ const mainController = {
   },
   filterByName: async (req, res) => {
     const filterName = req.query.name;
-
     pokemons = await dataMapper.getByName(filterName);
     res.render("index", {
       pokemons,

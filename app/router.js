@@ -1,9 +1,11 @@
 const express = require("express");
+const router = express.Router();
+
 const bookmarksController = require("./controllers/bookmarksController");
 const detailController = require("./controllers/detailController");
 const mainController = require("./controllers/mainController");
+
 const Locals = require("./middlewares/Locals");
-const router = express.Router();
 
 router.use(Locals);
 

@@ -1,6 +1,7 @@
 <%- include("./partials/header.ejs") %>
 <div class="container">
-  <div class="pokedex">
+  <main class="pokedex">
+    <h1 class="pokedex__title">Pokedex</h1>
     <% pokemons.forEach(pokemon => { %>
     <article class="pokemon">
       <h2 class="pokemon__name"><%=pokemon.name%></h2>
@@ -23,11 +24,11 @@
       ></a>
     </article>
     <%})%>
-  </div>
-  <div class="form__container">
+  </main>
+  <aside class="form__container">
     <h3 class="filter__title">Filter by :</h3>
   <form action="/type" class="form__filter" method="GET">
-    <div class="filter__container">
+    <section class="filter__container">
       <h4 class="filter__container-title">Types</h4>
       <div class="input__container">
         <% types.forEach(type => { %>
@@ -47,11 +48,11 @@
         >
         <% }) %>
       </div>
-    </div>
+    </section>
     <button class="filter__btn" type="submit">Filter</button>
   </form>
   <form action="/name" class="form__filter" method="GET">
-    <div class="filter__container">
+    <section class="filter__container">
       <h4 class="filter__container-title">Name</h4>
       <div class="input__container">
         <input
@@ -63,10 +64,10 @@
           aria-label="filter by name"
         />
       </div>
-    </div>
+    </section>
     <button class="filter__btn" type="submit">Filter</button>
   </form>
-  </div>
+  </aside>
 </div>
 
 <%- include("./partials/footer.ejs") %>
