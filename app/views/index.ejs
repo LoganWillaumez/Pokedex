@@ -24,8 +24,9 @@
     </article>
     <%})%>
   </div>
-  <form action="/" class="filter" method="GET">
+  <div class="form__container">
     <h3 class="filter__title">Filter by :</h3>
+  <form action="/" class="form__filter" method="GET">
     <div class="filter__container">
       <h4 class="filter__container-title">Types</h4>
       <div class="input__container">
@@ -35,20 +36,38 @@
           class="filter__checkbox"
           type="checkbox"
           name="type"
-          value="<%=type.types.toLowerCase()%>"
+          value="<%=type.types%>"
           aria-label="<%=type.types.toLowerCase()%> type"
         />
         <label
           class="type type-<%=type.types.toLowerCase()%>"
           for="checkbox-<%=type.types.toLowerCase()%>"
         >
-          <%=type.types.toLowerCase() %></label
+          <%=type.types %></label
         >
         <% }) %>
       </div>
     </div>
     <button class="filter__btn" type="submit">Filter</button>
   </form>
+  <form action="/" class="form__filter" method="GET">
+    <div class="filter__container">
+      <h4 class="filter__container-title">Name</h4>
+      <div class="input__container">
+        <input
+          id="name"
+          class="filter__name"
+          type="text"
+          name="name"
+          placeholder="name"
+          aria-label="filter by name"
+        />
+
+      </div>
+    </div>
+    <button class="filter__btn" type="submit">Filter</button>
+  </form>
+  </div>
 </div>
 
 <%- include("./partials/footer.ejs") %>

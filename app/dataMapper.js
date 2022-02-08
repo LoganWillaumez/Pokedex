@@ -16,5 +16,20 @@ const dataMapper = {
     ]);
     return result.rows[0];
   },
+  async getByName(name) {
+    const result = await client.query(
+      `SELECT * FROM pokemon WHERE name ILIKE $1;`,
+      [`%${name}%`]
+    );
+    return result.rows;
+  },
+  async findByElement(...elements) {
+    const result = await client.query(
+      `SELECT * FROM pokemon WHERE type @> $1`,
+      [elements]
+    );
+    return result.rows;
+  },
 };
 module.exports = dataMapper;
+// SELECT * FROM pokemon WHERE type @> '{Feu,Vol}';

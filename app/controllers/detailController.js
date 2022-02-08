@@ -6,9 +6,8 @@ const detailController = {
     const currentPokemon = await dataMapper.getOnePokemon(id);
     res.render("detail", {
       pokemon: currentPokemon,
+      title: `detail of : ${currentPokemon.name}`,
     });
-    console.log(`🚀 ~ currentPokemon`, currentPokemon);
   },
 };
-
 module.exports = detailController;
