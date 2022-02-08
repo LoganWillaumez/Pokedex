@@ -4,18 +4,22 @@
     <% pokemons.forEach(pokemon => { %>
     <article class="pokemon">
       <h2 class="pokemon__name"><%=pokemon.name%></h2>
+      <a href="/detail/<%=pokemon.id%>" title="Check details"
+        class="pokemon__details">
+     <i class="fas fa-info-circle"></i></a>
+     <a class = pokemon__img-link href ="/detail/<%=pokemon.id%>">
       <img
         class="pokemon__img"
         src="/images/pokemons/<%=pokemon.id%>.png"
         alt=""
       />
-
+      </a>
       <p class="pokemon__id">No.<%=pokemon.id%></p>
       <a
         title="Add to bookmark"
         class="bookmarks__add"
         href="/bookmarks/add/<%=pokemon.id%>"
-        ><i class="fas fa-plus-circle"></i
+        ><i class="fas fa-bookmark"></i></i
       ></a>
     </article>
     <%})%>
@@ -26,7 +30,6 @@
       <h4 class="filter__container-title">Types</h4>
       <div class="input__container">
         <% types.forEach(type => { %>
-
         <input
           id="checkbox-<%=type.types.toLowerCase()%>"
           class="filter__checkbox"

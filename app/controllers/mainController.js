@@ -25,6 +25,7 @@ const mainController = {
     res.render("index", {
       pokemons: pokemonsFilter,
       types,
+      title: "Pokédex",
     });
   },
 };

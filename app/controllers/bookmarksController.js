@@ -7,6 +7,7 @@ const bookmarksController = {
     }
     res.render("bookmarks", {
       bookmarks: req.session.bookmarks,
+      title: "Bookmarks of pokemons",
     });
   },
   async bookmarksAdd(req, res) {

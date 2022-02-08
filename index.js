@@ -23,6 +23,6 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use(router);
 
-app.listen(PORT, () => {
-  console.log(`listen at http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`listen at http://localhost:${PORT} or http://0.0.0.0:${PORT}`);
 });

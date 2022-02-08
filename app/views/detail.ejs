@@ -1,0 +1,16 @@
+<%- include("./partials/header.ejs") %>
+<div class="container container-detail">
+  <div class="pokedex pokedex-detail pokedex-bookmarks">
+    <article class="pokemon pokemon-detail">
+      <h2 class="pokemon__name"><%=pokemon.name%></h2>
+      <img
+        class="pokemon__img"
+        src="/images/pokemons/<%=pokemon.id%>.png"
+        alt=""
+      />
+      <p class="pokemon__id">No.<%=pokemon.id%></p>
+    </article>
+  </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>
