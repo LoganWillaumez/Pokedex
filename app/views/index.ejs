@@ -1,7 +1,8 @@
-<%- include("./partials/header.ejs") %>
+<%- include("./partials/header.ejs",{description : "Pokedex, list of the 151 first pokemon generation"}) %>
 <div class="container">
   <main class="pokedex">
     <h1 class="pokedex__title">Pokedex</h1>
+    <button class ="podekex__fitler" type="button"> Filter </button>
     <% pokemons.forEach(pokemon => { %>
     <article class="pokemon">
       <h2 class="pokemon__name"><%=pokemon.name%></h2>

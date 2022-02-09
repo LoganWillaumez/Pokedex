@@ -1,16 +1,35 @@
-<%- include("./partials/header.ejs") %>
-<div class="container container-detail">
-  <div class="pokedex pokedex-detail pokedex-bookmarks">
-    <article class="pokemon pokemon-detail">
-      <h2 class="pokemon__name"><%=pokemon.name%></h2>
-      <img
-        class="pokemon__img"
-        src="/images/pokemons/<%=pokemon.id%>.png"
-        alt=""
-      />
-      <p class="pokemon__id">No.<%=pokemon.id%></p>
-    </article>
-  </div>
+<%- include("./partials/header.ejs",{description:"Detail page"}) %>
+<div class="container-detail">
+  <main class="detail">
+    <h1 class="detail__title">Details for : <%=pokemon.name%></h1>
+    <div class="article__details">
+      <article class="pokemon-detail">
+        <h2 class="pokemon-detail__title"><%=pokemon.name%></h2>
+        <img
+          class="pokemon__img"
+          src="/images/pokemons/<%=pokemon.id%>.png"
+          alt=""
+        />
+      </article>
+      <div class="stats__container">
+        <h2 class="stats__title">Stats</h2>
+        <% for(let stat in stats){ %>
+        <div class="substats__container">
+          <article class="stats">
+            <h3 class="alias__title">
+              <%=stat%> : <%=Math.floor(stats[stat])%>
+            </h3>
+          </article>
+          <article class="cross">
+            <div class="cross__container">
+              <div class="stats__cross" style="width: <%=stats[stat]%>%"></div>
+            </div>
+          </article>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </main>
 </div>
 
 <%- include("./partials/footer.ejs") %>
