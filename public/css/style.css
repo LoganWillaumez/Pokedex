@@ -4,16 +4,12 @@ body {
   max-height: 100vh;
   overflow: hidden;
 }
-@media only screen and (max-width: 1350px) {
-  body {
-    overflow: scroll;
-  }
-}
 
 .container {
   background: linear-gradient(90deg, #c1a6f6 0%, #e7cdf9 100%);
   position: relative;
   height: inherit;
+  overflow: hidden;
   padding: 2em;
   max-height: 100vh;
   display: flex;
@@ -216,7 +212,9 @@ h6 {
   align-items: center;
   border-radius: 10px;
   padding: 2em;
-  height: fit-content;
+  height: 90%;
+  max-height: 900px;
+  overflow: scroll;
 }
 @media only screen and (max-width: 1350px) {
   .form__container {
@@ -225,9 +223,10 @@ h6 {
     position: absolute;
   }
   .form__container.filter__open {
-    height: fit-content;
     opacity: 1;
     right: 0;
+    overflow: scroll;
+    height: 80%;
   }
 }
 
@@ -266,12 +265,6 @@ h6 {
 
 .filter__container-title {
   margin-bottom: 1em;
-}
-
-.form__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .type {
@@ -495,16 +488,17 @@ input:checked + .type-dragon {
 
 .container-detail {
   padding: 2em;
-  height: 100vh;
   position: relative;
   background: linear-gradient(90deg, #c1a6f6 0%, #e7cdf9 100%);
-  display: grid;
-  place-items: center;
-  max-height: 100vh;
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 88px);
+  justify-content: center;
 }
 @media only screen and (max-width: 1000px) {
   .container-detail {
     padding: 0.5em;
+    height: calc(100vh - 66px);
   }
 }
 
@@ -535,6 +529,7 @@ input:checked + .type-dragon {
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
+  max-height: 100vh;
   opacity: 0.05;
   position: absolute;
   top: 0px;
@@ -553,8 +548,9 @@ input:checked + .type-dragon {
   padding: 2em;
   justify-content: center;
   position: relative;
-  width: 80%;
+  width: 95%;
   z-index: 1;
+  height: fit-content;
 }
 @media only screen and (max-width: 600px) {
   .detail {
@@ -569,11 +565,12 @@ input:checked + .type-dragon {
   flex-direction: column;
   width: 50%;
   padding: 2em;
-  gap: 3em;
+  gap: 2em;
   border-radius: 15px;
 }
 @media only screen and (max-width: 1000px) {
   .stats__container {
+    gap: 1.5em;
     width: 100%;
     padding: 0.5em;
   }
